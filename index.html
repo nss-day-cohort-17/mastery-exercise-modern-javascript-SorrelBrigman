@@ -4,18 +4,61 @@
     <meta charset="UTF-8">
     <title>Robot Battledome</title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="cyborg.css">
     <link rel="stylesheet" type="text/css" href="quiz.css">
   </head>
   <body>
-    <section id="choose_bots">
-      <div class="robot1">
-        <div class="container">
-            <div class="robotName">
+    <div class="container-fluid">
 
-            </div>
-        </div>
+
+      <div class="jumbotron">
+        <h1 class="display-3 text-center">Robot Battledome</h1>
+         <p class="lead text-center">Building Robots to battle each other.</p>
+        <hr class="my-2">
+        <p>Utilizing Bootstrap and jQuery to make Robots for you.</p>
+        <p class="lead text-right">
+          <a class="btn btn-info btn-lg" href="http://www.SorrelBrigman.com" role="button">Meet the Developer</a>
+        </p>
       </div>
-    </section>
+
+
+      <section id="choose_bots">
+        <div class="container">
+           <div class="row">
+            <div class="col-lg-6">
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control" aria-label="...">
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-lg-6">
+              <div class="input-group">
+                <input type="text" class="form-control" aria-label="...">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+          </div><!-- /.row -->
+        </div> <!-- end of container -->
+      </section> <!-- end of choose_bots section -->
+    </div> <!-- end of container for body of page -->
 
 
 
