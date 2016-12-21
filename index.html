@@ -28,23 +28,23 @@
             <div class="col-lg-6">
               <div class="input-group">
                 <div class="input-group-btn">
-                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Robot 1 Type<span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Select Robot 1</a></li>
                     <li><a href="#">Another action</a></li>
                     <li><a href="#">Something else here</a></li>
                     <li role="separator" class="divider"></li>
                     <li><a href="#">Separated link</a></li>
                   </ul>
                 </div><!-- /btn-group -->
-                <input type="text" class="form-control" aria-label="...">
+                <input type="text" class="form-control" aria-label="Robot 1" placeholder="Name Robot 1">
               </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
             <div class="col-lg-6">
               <div class="input-group">
-                <input type="text" class="form-control" aria-label="...">
+                <input type="text" class="form-control" aria-label="Robot 2" placeholder="Name Robot 2">
                 <div class="input-group-btn">
-                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Robot 2 Type <span class="caret"></span></button>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="#">Action</a></li>
                     <li><a href="#">Another action</a></li>
@@ -58,11 +58,29 @@
           </div><!-- /.row -->
         </div> <!-- end of container -->
       </section> <!-- end of choose_bots section -->
+
+      <section id="battle">
+        <div class="container">
+          <div class="row robotBattle">
+            <div class="col-md-4  robot1">
+                <p>PlaceHolder</p>
+            </div>
+             <div class="col-md-4 scorecard">
+                <p>Score</p>
+            </div>
+            <div class="col-md-4 robot2">
+                <p>Placeholder</p>
+            </div>
+            <div class="col-md-2 col-md-offset-5">
+                <button type="button" class="btn btn-danger btn-lg btn-block attack">Attack!</button>
+            </div>
+          </div> <!-- end of row -->
+        </div> <!-- end of container -->
+      </section> <!-- end of battle section -->
     </div> <!-- end of container for body of page -->
 
-
-
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="quiz.js"></script>
   </body>
 </html>

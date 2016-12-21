@@ -1,0 +1,19 @@
+//Holds robot cards
+
+
+.attack {
+  padding-top:  2rem;
+}
+
+
+.robotBattle {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid;
+}
+
+.robot1, .robot2 {
+  padding: 2rem;
+  border: 1px solid;
+  margin-bottom: 1rem;
+}
