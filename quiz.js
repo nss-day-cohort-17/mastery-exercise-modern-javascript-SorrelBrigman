@@ -4,18 +4,22 @@
 $('.dropdown-toggle').dropdown();
 
 
+//Global variables
+
+var name = "";
+
 //basic robot object
  var BattleDome = {};
 
  BattleDome.Robot = function() {
-    this.class = null;
-    this.weapon = null;
+    this.weapon = [];
     this.robotName = name;
     this.health = Math.floor(Math.random() * 40 + 100);
     this.strength = 0;
     this.intelligence = 0;
     this.speed = 0;
     this.agile = 0;
+    this.robotic = true;
 };
 
 
@@ -31,9 +35,6 @@ BattleDome.Robot.Astro = function() {
   this.intelligenceBonus = 30;
   this.agileBonus = 0;
   this.speedBonus = 0;
-  this.autonomy = false;
-  this.pilot = true;
-  this.trendy = true;
 }
 
 BattleDome.Robot.Astro.protoype = new BattleDome.Robot();
@@ -44,9 +45,7 @@ BattleDome.Robot.r2d2 = function() {
   this.health = Math.floor(Math.random() * 40) + 60;
   this.weapon = "stun gun";
   this.strengthBonus = - 10;
-  this.intelligenceBonus = 30;
-  this.agileBonus = 0;
-  this.speedBonus = 2;
+
   //damage between 20-45
   this.damage = Math.floor(Math.random() * 25) + 20;
 }
@@ -59,9 +58,6 @@ BattleDome.Robot.hal = function() {
   this.health = Math.floor(Math.random() * 30) + 30;
   this.weapon = "well timed space locks";
   this.strengthBonus = 20;
-  this.intelligenceBonus = 40;
-  this.agileBonus = 0;
-  this.speedBonus = 10;
   //damage between 30-60
   this.damage = Math.floor(Math.random() * 30) + 30;
 }
@@ -79,12 +75,9 @@ BattleDome.Robot.hal.protoype = new BattleDome.Robot.Astro();
 
 BattleDome.Robot.Biped = function() {
   this.strengthBonus = 0;
-  this.intelligenceBonus = 20;
+  this.intelligenceBonus = 0;
   this.agileBonus = 20;
   this.speedBonus = 0;
-  this.autonomy = true;
-  this.pilot = false;
-  this.trendy = false;
 
 }
 
@@ -96,9 +89,6 @@ BattleDome.Robot.c3po = function() {
   this.health = Math.floor(Math.random() * 30) + 50;
   this.weapon = "talking you to death";
   this.strengthBonus = - 10;
-  this.intelligenceBonus = 20;
-  this.agileBonus = 20;
-  this.speedBonus = 0;
   //damage between 10-20
   this.damage = Math.floor(Math.random() * 10) + 10;
 }
@@ -111,9 +101,6 @@ BattleDome.Robot.data = function() {
   this.health = Math.floor(Math.random() * 50) + 100;
   this.weapon = "brute force and intelligence";
   this.strengthBonus = 25;
-  this.intelligenceBonus = 20;
-  this.agileBonus = 40;
-  this.speedBonus = 10;
   //damage between 30-60;
   this.damage = Math.floor(Math.random() * 30) + 30;
 }
@@ -126,9 +113,6 @@ BattleDome.Robot.k2so = function() {
   this.health = Math.floor(Math.random() * 20) + 80;
   this.weapon = "biting sarcasm";
   this.strengthBonus = 15;
-  this.intelligenceBonus = 20;
-  this.agileBonus = 30;
-  this.speedBonus = 5;
   //damage between 20-45
   this.damage = Math.floor(Math.random() * 25) + 20;
 }
@@ -145,12 +129,10 @@ BattleDome.Robot.k2so.protoype = new BattleDome.Robot.Biped();
 
 BattleDome.Robot.Terrian = function() {
   this.strengthBonus = 0;
-  this.intelligenceBonus = 30;
+  this.intelligenceBonus = 0;
   this.speedBonus = 20;
   this.agileBonus= 0;
-  this.autonomy = false;
-  this.pilot = false;
-  this.trendy = true;
+
 }
 
 BattleDome.Robot.Terrian.protoype = new BattleDome.Robot();
@@ -162,9 +144,6 @@ BattleDome.Robot.bb8 = function() {
   this.health = Math.floor(Math.random() * 20) + 80;
   this.weapon = "flame thrower";
   this.strengthBonus = 0;
-  this.intelligenceBonus = 30;
-  this.speedBonus = 20;
-  this.agileBonus= 5;
   //damage between 20-50
   this.damage = Math.floor(Math.random() * 30) + 20;
 }
@@ -177,9 +156,6 @@ BattleDome.Robot.nanytes = function() {
   this.health = Math.floor(Math.random() * 20) + 40;
   this.weapon = "assimilation";
   this.strengthBonus = - 10;
-  this.intelligenceBonus = 30;
-  this.speedBonus = 20;
-  this.agileBonus= 0;
   //damage between 30-80
   this.damage = Math.floor(Math.random() * 50) + 30;
 }
