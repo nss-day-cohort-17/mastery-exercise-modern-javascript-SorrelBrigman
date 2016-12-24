@@ -194,13 +194,19 @@ $(function(){
 });
 
 
-//If the user has selected two robots
-
+/*
+  When the user clicks the attack button
+*/
 
 function checkTypes() {
-  if ($(".btn-success").text() === "Select Type " || $(".btn-warning").text() === "Select Type")
+  //if both type of robots aren't selected
+  if ($(".btn-success").text() === "Select Type " || $(".btn-warning").text() === "Select Type") {
+    //show the alert asking user to select both types
     $(".alertType").show();
+  }
+  //if the user hasn't named both robots
   else if ($(".form-control").val() === "") {
+    // an alert is displayed prompting them to name both robots
     $(".alertName").show();
   }
   else {
@@ -210,4 +216,10 @@ function checkTypes() {
 
 //When you click the attack button, check for  types and names
 
-$(".attack").click(checkTypes);
+$(".finalize").click(checkTypes);
+
+
+function robotBattle() {
+//Robot 1 is created
+
+}
