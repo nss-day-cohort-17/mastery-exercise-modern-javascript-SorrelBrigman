@@ -162,3 +162,34 @@ Robot.nanytes = function() {
 }
 
 Robot.nanytes.prototype = new Robot.Terrian();
+
+/*
+  Functionality of the page
+
+*/
+
+//change the text of dropdown menu to match the selection
+
+
+
+$(function(){
+
+    $(".robot1Select li a").click(function(){
+
+      $(".btn-warning:first-child").text($(this).text());
+      $(".btn-warning:first-child").val($(this).text());
+
+   });
+});
+
+//changes the text of the right menu
+$(function(){
+
+    $(".dropdown-menu-right li a").click(function(){
+
+      $(".btn-success:first-child").text($(this).text());
+      $(".btn-success:first-child").val($(this).text());
+
+   });
+
+});
