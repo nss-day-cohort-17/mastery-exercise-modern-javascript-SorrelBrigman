@@ -15,7 +15,6 @@ var name = "";
 //basic robot object
 
 
-
 Robot = function() {
     this.weapon = [];
     this.name = name;
@@ -32,9 +31,7 @@ Robot = function() {
     ASTRO DROID CLASS
     - R2D2
     - Hal
-
 */
-
 
 Robot.Astro = function() {
   this.strengthBonus = 0;
@@ -51,6 +48,10 @@ Robot.r2d2 = function() {
   this.health = Math.floor(Math.random() * 40) + 60;
   this.weapon = "stun gun";
   this.strengthBonus = - 10;
+
+  //damage between 20-45
+  this.damage = Math.floor(Math.random() * 25) + 20;
+}
 
 Robot.r2d2.prototype = new Robot.Astro();
 
@@ -72,9 +73,7 @@ Robot.hal.prototype = new Robot.Astro();
     - C3P0
     - Data
     - K2-SO
-
 */
-
 
 Robot.Biped = function() {
   this.strengthBonus = 0;
@@ -127,7 +126,6 @@ Robot.k2so.prototype = new Robot.Biped();
     ALL Terrian DROID CLASS
     - BB8
     - Nanytes
-
 */
 
 Robot.Terrian = function() {
@@ -167,7 +165,6 @@ Robot.nanytes.prototype = new Robot.Terrian();
 
 /*
   Functionality of the page
-
 */
 
 //change the text of dropdown menu to match the selection
@@ -201,7 +198,7 @@ $(function(){
 
 
 function checkTypes() {
-  if ($(".btn:first-child").text() === "Select Type")
+  if ($(".btn-success").text() === "Select Type " || $(".btn-warning").text() === "Select Type")
     $(".alertType").show();
   else if ($(".form-control").val() === "") {
     $(".alertName").show();
