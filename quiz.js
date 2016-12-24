@@ -195,7 +195,7 @@ $(function(){
 
 
 /*
-  When the user clicks the attack button
+  When the user clicks the finalize button button
 */
 
 function checkTypes() {
@@ -210,7 +210,7 @@ function checkTypes() {
     $(".alertName").show();
   }
   else {
-    //Run attack function
+    //Run finalize function
   }
 }
 
@@ -221,5 +221,8 @@ $(".finalize").click(checkTypes);
 
 function robotBattle() {
 //Robot 1 is created
+//Robot 2 is created
+//Attack Button is enabled
+//Visual indicator that this has occurred
 
 }
