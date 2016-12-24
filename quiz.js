@@ -4,6 +4,9 @@
 //enables bootstrap dropdown button to work
 $('.dropdown-toggle').dropdown();
 
+//hides alerts on page load
+$(".alertType").hide();
+$(".alertName").hide();
 
 //Global variables
 
@@ -171,7 +174,7 @@ Robot.nanytes.prototype = new Robot.Terrian();
 //change the text of dropdown menu to match the selection
 
 
-
+//changes the text of the left menu
 $(function(){
 
     $(".robot1Select li a").click(function(){
@@ -193,3 +196,22 @@ $(function(){
    });
 
 });
+
+
+//If the user has selected two robots
+
+
+function checkTypes() {
+  if ($(".btn:first-child").text() === "Select Type")
+    $(".alertType").show();
+  else if ($(".form-control").val() === "") {
+    $(".alertName").show();
+  }
+  else {
+    //Run attack function
+  }
+}
+
+//When you click the attack button, check for  types and names
+
+$(".attack").click(checkTypes);
