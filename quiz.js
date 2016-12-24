@@ -1,3 +1,4 @@
+
 //base functionality for page
 
 //enables bootstrap dropdown button to work
@@ -9,11 +10,11 @@ $('.dropdown-toggle').dropdown();
 var name = "";
 
 //basic robot object
- var BattleDome = {};
 
- BattleDome.Robot = function() {
+
+Robot = function() {
     this.weapon = [];
-    this.robotName = name;
+    this.name = name;
     this.health = Math.floor(Math.random() * 40 + 100);
     this.strength = 0;
     this.intelligence = 0;
@@ -30,16 +31,16 @@ var name = "";
 
 */
 
-BattleDome.Robot.Astro = function() {
+Robot.Astro = function() {
   this.strengthBonus = 0;
   this.intelligenceBonus = 30;
   this.agileBonus = 0;
   this.speedBonus = 0;
 }
 
-BattleDome.Robot.Astro.protoype = new BattleDome.Robot();
+Robot.Astro.prototype = new Robot();
 
-BattleDome.Robot.r2d2 = function() {
+Robot.r2d2 = function() {
   this.name = "R2D2";
   //health between 60-100
   this.health = Math.floor(Math.random() * 40) + 60;
@@ -50,9 +51,9 @@ BattleDome.Robot.r2d2 = function() {
   this.damage = Math.floor(Math.random() * 25) + 20;
 }
 
-BattleDome.Robot.r2d2.protoype = new BattleDome.Robot.Astro();
+Robot.r2d2.prototype = new Robot.Astro();
 
-BattleDome.Robot.hal = function() {
+Robot.hal = function() {
   this.name = "Hal";
   // health between 30-60
   this.health = Math.floor(Math.random() * 30) + 30;
@@ -62,7 +63,7 @@ BattleDome.Robot.hal = function() {
   this.damage = Math.floor(Math.random() * 30) + 30;
 }
 
-BattleDome.Robot.hal.protoype = new BattleDome.Robot.Astro();
+Robot.hal.prototype = new Robot.Astro();
 
 
 /*
@@ -73,7 +74,7 @@ BattleDome.Robot.hal.protoype = new BattleDome.Robot.Astro();
 
 */
 
-BattleDome.Robot.Biped = function() {
+Robot.Biped = function() {
   this.strengthBonus = 0;
   this.intelligenceBonus = 0;
   this.agileBonus = 20;
@@ -81,9 +82,9 @@ BattleDome.Robot.Biped = function() {
 
 }
 
-BattleDome.Robot.Biped.protoype = new BattleDome.Robot();
+Robot.Biped.prototype = new Robot();
 
-BattleDome.Robot.c3po = function() {
+Robot.c3po = function() {
   this.name = "C3PO";
   // health between 50-80
   this.health = Math.floor(Math.random() * 30) + 50;
@@ -93,9 +94,9 @@ BattleDome.Robot.c3po = function() {
   this.damage = Math.floor(Math.random() * 10) + 10;
 }
 
-BattleDome.Robot.c3po.protoype = new BattleDome.Robot.Biped();
+Robot.c3po.prototype = new Robot.Biped();
 
-BattleDome.Robot.data = function() {
+Robot.data = function() {
   this.name = "data";
   // health between 100-150
   this.health = Math.floor(Math.random() * 50) + 100;
@@ -105,9 +106,9 @@ BattleDome.Robot.data = function() {
   this.damage = Math.floor(Math.random() * 30) + 30;
 }
 
-BattleDome.Robot.data.protoype = new BattleDome.Robot.Biped();
+Robot.data.prototype = new Robot.Biped();
 
-BattleDome.Robot.k2so = function() {
+Robot.k2so = function() {
   this.name = "K2-SO"
   //health between 80-100
   this.health = Math.floor(Math.random() * 20) + 80;
@@ -117,7 +118,7 @@ BattleDome.Robot.k2so = function() {
   this.damage = Math.floor(Math.random() * 25) + 20;
 }
 
-BattleDome.Robot.k2so.protoype = new BattleDome.Robot.Biped();
+Robot.k2so.prototype = new Robot.Biped();
 
 
 /*
@@ -127,7 +128,7 @@ BattleDome.Robot.k2so.protoype = new BattleDome.Robot.Biped();
 
 */
 
-BattleDome.Robot.Terrian = function() {
+Robot.Terrian = function() {
   this.strengthBonus = 0;
   this.intelligenceBonus = 0;
   this.speedBonus = 20;
@@ -135,10 +136,10 @@ BattleDome.Robot.Terrian = function() {
 
 }
 
-BattleDome.Robot.Terrian.protoype = new BattleDome.Robot();
+Robot.Terrian.prototype = new Robot();
 
 
-BattleDome.Robot.bb8 = function() {
+Robot.bb8 = function() {
   this.name = "BB8";
   // health between 80-100
   this.health = Math.floor(Math.random() * 20) + 80;
@@ -148,9 +149,9 @@ BattleDome.Robot.bb8 = function() {
   this.damage = Math.floor(Math.random() * 30) + 20;
 }
 
-BattleDome.Robot.bb8.protoype = new BattleDome.Robot.Terrian();
+Robot.bb8.prototype = new Robot.Terrian();
 
-BattleDome.Robot.nanytes = function() {
+Robot.nanytes = function() {
   this.name = "Nanytes";
   //health between 40-60
   this.health = Math.floor(Math.random() * 20) + 40;
@@ -160,4 +161,4 @@ BattleDome.Robot.nanytes = function() {
   this.damage = Math.floor(Math.random() * 50) + 30;
 }
 
-BattleDome.Robot.nanytes.protoype = new BattleDome.Robot.Terrian();
+Robot.nanytes.prototype = new Robot.Terrian();
