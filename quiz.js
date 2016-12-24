@@ -15,6 +15,7 @@ var name = "";
 //basic robot object
 
 
+
 Robot = function() {
     this.weapon = [];
     this.name = name;
@@ -34,6 +35,7 @@ Robot = function() {
 
 */
 
+
 Robot.Astro = function() {
   this.strengthBonus = 0;
   this.intelligenceBonus = 30;
@@ -49,10 +51,6 @@ Robot.r2d2 = function() {
   this.health = Math.floor(Math.random() * 40) + 60;
   this.weapon = "stun gun";
   this.strengthBonus = - 10;
-
-  //damage between 20-45
-  this.damage = Math.floor(Math.random() * 25) + 20;
-}
 
 Robot.r2d2.prototype = new Robot.Astro();
 
@@ -76,6 +74,7 @@ Robot.hal.prototype = new Robot.Astro();
     - K2-SO
 
 */
+
 
 Robot.Biped = function() {
   this.strengthBonus = 0;
