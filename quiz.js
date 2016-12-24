@@ -202,7 +202,7 @@ $(function(){
 
 
 function checkTypes() {
-  if ($(".btn:first-child").text() === "Select Type")
+  if ($(".btn-success").text() === "Select Type " || $(".btn-warning").text() === "Select Type")
     $(".alertType").show();
   else if ($(".form-control").val() === "") {
     $(".alertName").show();
