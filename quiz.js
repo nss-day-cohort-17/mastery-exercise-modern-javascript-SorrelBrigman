@@ -11,6 +11,12 @@ $(".alertName").hide();
 //Global variables
 
 var name = "";
+var bot1;
+var bot2;
+var battleBot1;
+var battleBot2;
+var userName1;
+var userName2;
 
 //basic robot object
 
@@ -24,6 +30,7 @@ Robot = function() {
     this.speed = 0;
     this.agile = 0;
     this.robotic = true;
+    this.attackDamage = 0;
 };
 
 
@@ -214,23 +221,79 @@ function checkTypes() {
     finalize();
     //hide the jumbotron div
     $(".jumbotron").hide();
+    //hide finalize button
+    $(".finalize").hide();
   }
 }
 
-//When you click the attack button, check for  types and names
+//When you click the finalize button, check for  types and names
 
 $(".finalize").click(checkTypes);
 
 
 function finalize() {
 //Robot 1 is created
-var bot1 = $(".btn-warning:first-child").text().toLowerCase();
-var battleBot1 = new Robot[bot1];
+  bot1 = $(".btn-warning:first-child").text().toLowerCase();
+  battleBot1 = new Robot[bot1];
+  userName1 = $(".userName1").val();
 //Robot 2 is created
-var bot2 = $(".btn-success:first-child").text().toLowerCase();
-var battleBot2 = new Robot[bot2];
+  bot2 = $(".btn-success:first-child").text().toLowerCase();
+  battleBot2 = new Robot[bot2];
+  userName2 = $(".userName2").val();
 //Attack Button is enabled
-$(".attack").prop("disabled", false)
+  $(".attack").prop("disabled", false);
 //Visual indicator that this has occurred
-
+  //jumbotron section hidden. happens in checkTypes function
 }
+
+/*
+  When the user clicks the attack button button
+*/
+
+//function that calucates damage potential
+
+function damageValue(whichRobot) {
+  whichRobot.attackDamage = Math.floor(whichRobot.damage + ((whichRobot.strengthBonus * .5) + (whichRobot.intelligenceBonus * .5) + (whichRobot.agileBonus * .25) + (whichRobot.speedBonus * .75)) * (whichRobot.health / 100));
+}
+
+
+
+function robotBattle() {
+//damage potential for bot 1 calculated
+  damageValue(battleBot1);
+//damage from bot1 subtracted from bot2 health
+  battleBot2.health = battleBot2.health - battleBot1.attackDamage;
+//check for health
+checkForHealth();
+//damge potential for bot 2 calculated
+  damageValue(battleBot2);
+//damge subtracted from bot1 health
+  battleBot1.health = battleBot1.health - battleBot2.attackDamage;
+//check for health
+  checkForHealth();
+}
+
+
+// check for health function
+
+function checkForHealth() {
+  //if bot 2 health ===0, display  bot 1 won
+  if (battleBot2.health <= 0) {
+    var victory1 = `<h4>${userName1}, the ${battleBot1.name}, defeated ${userName2}, the ${battleBot2.name} with its ${battleBot1.weapon}!</h4>`
+    $("#battle .robot1").html(victory1);
+    var loss2 = `<h4>${userName2} lost!</h4>`
+    $("#battle .robot2").html(loss2);
+  }
+  //if bot 1 health === 0 display bot 2 won
+  if (battleBot1.health <= 1) {
+    var victory2 = `<h4>${userName2}, the ${battleBot2.name}, defeated ${userName1}, the ${battleBot1.name} with its ${battleBot2.weapon}!</h4>`
+    $("#battle .robot2").html(victory2);
+    var loss1 = `<h4>${userName1} lost!</h4>`
+    $("#battle .robot1").html(loss1);
+  }
+  //if both >0 do nothing
+}
+
+//On clicking the attack function, the robotBattle function runs
+
+$(".attack").click(robotBattle);
