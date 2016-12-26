@@ -211,6 +211,9 @@ function checkTypes() {
   }
   else {
     //Run finalize function
+    finalize();
+    //hide the jumbotron div
+    $(".jumbotron").hide();
   }
 }
 
@@ -219,10 +222,15 @@ function checkTypes() {
 $(".finalize").click(checkTypes);
 
 
-function robotBattle() {
+function finalize() {
 //Robot 1 is created
+var bot1 = $(".btn-warning:first-child").text().toLowerCase();
+var battleBot1 = new Robot[bot1];
 //Robot 2 is created
+var bot2 = $(".btn-success:first-child").text().toLowerCase();
+var battleBot2 = new Robot[bot2];
 //Attack Button is enabled
+$(".attack").prop("disabled", false)
 //Visual indicator that this has occurred
 
 }
