@@ -100,7 +100,7 @@ Robot.c3po = function() {
   this.name = "C3PO";
   // health between 50-80
   this.health = Math.floor(Math.random() * 30) + 50;
-  this.weapon = "talking you to death";
+  this.weapon = "non-stop dialogue";
   this.strengthBonus = - 10;
   //damage between 10-20
   this.damage = Math.floor(Math.random() * 10) + 10;
@@ -166,7 +166,7 @@ Robot.nanytes = function() {
   this.name = "Nanytes";
   //health between 40-60
   this.health = Math.floor(Math.random() * 20) + 40;
-  this.weapon = "assimilation";
+  this.weapon = "assimilation process";
   this.strengthBonus = - 10;
   //damage between 30-80
   this.damage = Math.floor(Math.random() * 50) + 30;
@@ -277,8 +277,8 @@ function damageValue(whichRobot) {
 }
 
 function updateRound() {
-  roundNumber = roundNumber + 0.5;
-  $(".scorecard").html(`<p>Round: ${roundNumber}</p>`);
+  roundNumber = roundNumber + 1;
+  $(".scorecard").html(`<h3>Round: ${roundNumber}</h3>`);
 
 }
 
@@ -314,8 +314,7 @@ function checkForHealth() {
   } else {
   //if both >0 update health and damage
     loadInfo();
-    //and update the Round number
-    updateRound();
+
   }
 }
 
@@ -337,7 +336,11 @@ function robotBattle() {
     battleBot1.health = battleBot1.health - battleBot2.attackDamage;
 //check for health
    checkForHealth();
-//add one to the round number to update the round
+//if the battle still continues
+    if(battleBot1.health >= 0) {
+  //and update the Round number
+    updateRound();
+    }
   }
 }
 

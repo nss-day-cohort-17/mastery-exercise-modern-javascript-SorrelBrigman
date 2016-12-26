@@ -12,7 +12,8 @@
 
 .robotBattle {
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 2rem 3rem;
+
   border: 1px solid;
 }
 
@@ -20,4 +21,8 @@
   padding: 2rem;
   border: 1px solid;
   margin-bottom: 1rem;
+}
+
+.scorecard h3 {
+  color: rgb(136, 136, 136);
 }
