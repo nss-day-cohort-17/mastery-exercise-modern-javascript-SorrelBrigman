@@ -20,6 +20,7 @@ var battleBot1;
 var battleBot2;
 var userName1;
 var userName2;
+var roundNumber = 1;
 
 //basic robot object
 
@@ -275,6 +276,12 @@ function damageValue(whichRobot) {
   whichRobot.attackDamage = Math.floor(whichRobot.damage + ((whichRobot.strengthBonus * .5) + (whichRobot.intelligenceBonus * .5) + (whichRobot.agileBonus * .25) + (whichRobot.speedBonus * .75)) * (whichRobot.health / 100));
 }
 
+function updateRound() {
+  roundNumber = roundNumber + 0.5;
+  $(".scorecard").html(`<p>Round: ${roundNumber}</p>`);
+
+}
+
 
 
 // check for health function
@@ -307,6 +314,8 @@ function checkForHealth() {
   } else {
   //if both >0 update health and damage
     loadInfo();
+    //and update the Round number
+    updateRound();
   }
 }
 
@@ -320,7 +329,6 @@ function robotBattle() {
   battleBot2.health = battleBot2.health - battleBot1.attackDamage;
 //check for health
   checkForHealth();
-  debugger;
   //if the battle continues, calculate damage for bot 2
   if (battleBot2.health >= 0) {
 //damge potential for bot 2 calculated
@@ -329,6 +337,7 @@ function robotBattle() {
     battleBot1.health = battleBot1.health - battleBot2.attackDamage;
 //check for health
    checkForHealth();
+//add one to the round number to update the round
   }
 }
 
