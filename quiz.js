@@ -277,43 +277,30 @@ function damageValue(whichRobot) {
 
 
 
-function robotBattle() {
-//damage potential for bot 1 calculated
-  damageValue(battleBot1);
-//damage from bot1 subtracted from bot2 health
-  battleBot2.health = battleBot2.health - battleBot1.attackDamage;
-//check for health
-  checkForHealth();
-//damge potential for bot 2 calculated
-  damageValue(battleBot2);
-//damge subtracted from bot1 health
-  battleBot1.health = battleBot1.health - battleBot2.attackDamage;
-//check for health
-  checkForHealth();
-}
-
-
 // check for health function
 
 function checkForHealth() {
   //if bot 2 health ===0, display  bot 1 won
   if (battleBot2.health <= 0) {
-    //display victory message for bot 1
-    var victory1 = `<h4>${userName1}, the ${battleBot1.name}, defeated ${userName2}, the ${battleBot2.name} with its ${battleBot1.weapon}!</h4>`
+
+    console.log("bot 1 victory");
+    ////display victory message for bot 2 //go
+    var victory1 = `<h4>${userName1}, the ${battleBot1.name}, defeated ${userName2}, the ${battleBot2.name} with its ${battleBot1.weapon}!</h4>`;
     $("#battle .robot1").html(victory1);
     //display loss message for bot 2
-    var loss2 = `<h4>${userName2} lost!</h4>`
+    var loss2 = `<h4>${userName2} lost!</h4>`;
     $("#battle .robot2").html(loss2);
-    //disable attack button
+    //dis able attack button
     $(".attack").prop("disabled", true);
   }
+
   //if bot 1 health === 0 display bot 2 won
-  if (battleBot1.health <= 0) {
+   else if (battleBot1.health <= 0) {
     //display victory message for bot 2
-    var victory2 = `<h4>${userName2}, the ${battleBot2.name}, defeated ${userName1}, the ${battleBot1.name} with its ${battleBot2.weapon}!</h4>`
+    var victory2 = `<h4>${userName2}, the ${battleBot2.name}, defeated ${userName1}, the ${battleBot1.name} with its ${battleBot2.weapon}!</h4>`;
     $("#battle .robot2").html(victory2);
     //display loss message for bot 2
-    var loss1 = `<h4>${userName1} lost!</h4>`
+    var loss1 = `<h4>${userName1} lost!</h4>`;
     $("#battle .robot1").html(loss1);
     //dis able attack button
     $(".attack").prop("disabled", true);
@@ -322,6 +309,29 @@ function checkForHealth() {
     loadInfo();
   }
 }
+
+
+//function that battles the bots
+function robotBattle() {
+
+//damage potential for bot 1 calculated
+  damageValue(battleBot1);
+//damage from bot1 subtracted from bot2 health
+  battleBot2.health = battleBot2.health - battleBot1.attackDamage;
+//check for health
+  checkForHealth();
+  debugger;
+  //if the battle continues, calculate damage for bot 2
+  if (battleBot2.health >= 0) {
+//damge potential for bot 2 calculated
+    damageValue(battleBot2);
+//damge subtracted from bot1 health
+    battleBot1.health = battleBot1.health - battleBot2.attackDamage;
+//check for health
+   checkForHealth();
+  }
+}
+
 
 //On clicking the attack function, the robotBattle function runs
 
