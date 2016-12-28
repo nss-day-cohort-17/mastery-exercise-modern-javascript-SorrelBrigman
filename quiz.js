@@ -21,6 +21,7 @@ var battleBot2;
 var userName1;
 var userName2;
 var roundNumber = 1;
+var robotChoice = ["r2d2", "hal", "c3po", "data", "k2so", "bb8", "nanytes"];
 
 //basic robot object
 
@@ -235,15 +236,28 @@ function checkTypes() {
 $(".finalize").click(checkTypes);
 
 
+//Surprise Me Function
+ function surpriseMe() {
+  var i = Math.floor(Math.random() * (robotChoice.length));
+  var bot = robotChoice[i];
+  return bot;
+ }
+
 function finalize() {
 //Robot 1 is created
   bot1 = $(".btn-warning:first-child").text().toLowerCase();
+  if (bot1 === "surprise me") {
+   bot1 = surpriseMe();
+  }
   battleBot1 = new Robot[bot1];
   userName1 = $(".userName1").val();
   //base attack damage calculated
   damageValue(battleBot1);
 //Robot 2 is created
   bot2 = $(".btn-success:first-child").text().toLowerCase();
+  if (bot2 === "surprise me") {
+    bot2 = surpriseMe();
+  }
   battleBot2 = new Robot[bot2];
   userName2 = $(".userName2").val();
   //base attack damage calcuclated
@@ -259,9 +273,9 @@ function finalize() {
 }
 
 function loadInfo() {
-  var card1 = `<h4>${userName1}</h4> <p>Health: ${battleBot1.health}</p> <p>Attack Damage: ${battleBot1.attackDamage}</p>`;
+  var card1 = `<h4>${userName1}</h4> <p>Type: ${battleBot1.name}</p> <p>Health: ${battleBot1.health}</p> <p>Attack Damage: ${battleBot1.attackDamage}</p>`;
   $(".robot1").html(card1);
-  var card2 = `<h4>${userName2}</h4><p>Health: ${battleBot2.health}</p><p>Attack Damage: ${battleBot2.attackDamage}</p>`;
+  var card2 = `<h4>${userName2}</h4> <p>Type: ${battleBot2.name}</p> <p>Health: ${battleBot2.health}</p><p>Attack Damage: ${battleBot2.attackDamage}</p>`;
   $(".robot2").html(card2);
 
 }
