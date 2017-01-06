@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Robot Battledome</title>
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="cyborg.css">
+    <link rel="stylesheet" type="text/css" href="quiz.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+
+
+      <div class="jumbotron">
+        <h1 class="display-3 text-center">Robot Battledome</h1>
+         <p class="lead text-center">Building Robots to battle each other.</p>
+        <hr class="my-2">
+        <p>Utilizing Bootstrap and jQuery to make Robots for you.</p>
+        <p class="lead text-right">
+          <a class="btn btn-info btn-lg" href="http://www.SorrelBrigman.com" role="button">Meet the Developer</a>
+        </p>
+      </div>
+
+      <div class="alert alert-warning alert-dismissible alertType" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Danger, Will Robinson!</strong> You must pick the type of both your robots.
+      </div>
+
+      <div class="alert alert-info alert-dismissible alertName" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <strong>Danger, Will Robinson!</strong> You must name both your robots.
+      </div>
+
+
+      <section id="choose_bots">
+        <div class="container">
+           <div class="row">
+            <div class="col-md-6">
+              <p class="text-center">Robot 1</p>
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-warning dropdown-toggle " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Type<span class="caret"></span></button>
+                  <ul class="dropdown-menu robot1Select">
+                    <li><a href="#">R2D2</a></li>
+                    <li><a href="#">Hal</a></li>
+                    <li><a href="#">C3PO</a></li>
+                    <li><a href="#">Data</a></li>
+                    <li><a href="#">K2SO</a></li>
+                    <li><a href="#">BB8</a></li>
+                    <li><a href="#">Nanytes</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Surprise Me</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control userName1" aria-label="Robot 1" placeholder="Name">
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            <div class="col-md-6">
+              <p class="text-center">Robot 2</p>
+              <div class="input-group">
+                <input type="text" class="form-control userName2" aria-label="Robot 2" placeholder="Name">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Type <span class="caret"></span></button>
+                  <ul class="dropdown-menu dropdown-menu-right robot2Select">
+                    <li><a href="#">R2D2</a></li>
+                    <li><a href="#">Hal</a></li>
+                    <li><a href="#">C3PO</a></li>
+                    <li><a href="#">Data</a></li>
+                    <li><a href="#">K2SO</a></li>
+                    <li><a href="#">BB8</a></li>
+                    <li><a href="#">Nanytes</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Surprise Me</a></li>
+                  </ul>
+                </div><!-- /btn-group -->
+              </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+
+            <div class="col-md-4 col-md-offset-4">
+                <button type="button" class="btn btn-info btn-lg btn-block finalize">Finalize Your Robots</button>
+            </div>
+
+          </div><!-- /.row -->
+        </div> <!-- end of container -->
+      </section> <!-- end of choose_bots section -->
+
+      <section id="battle">
+        <div class="container">
+          <div class="robotBattle">
+            <div class="row">
+              <div class="col-md-4  robot1">
+                  <p>PlaceHolder</p>
+              </div>
+               <div class="col-md-4 scorecard text-center">
+                  <h3>Round 1</h3>
+              </div>
+              <div class="col-md-4 robot2">
+                  <p>Placeholder</p>
+              </div>
+            </div> <!-- end of row -->
+            <div class="row">
+              <div class="col-md-2 col-md-offset-5">
+                  <button type="button" class="btn btn-danger btn-lg btn-block attack" disabled="disabled">Attack!</button>
+              </div>
+            </div> <!-- end of row -->
+          </div> <!-- end of robotBattle card -->
+        </div> <!-- end of container -->
+      </section> <!-- end of battle section -->
+    </div> <!-- end of container for body of page -->
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script type="text/javascript" src="quiz.js"></script>
+  </body>
+</html>
